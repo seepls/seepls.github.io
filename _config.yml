@@ -1,0 +1,67 @@
+# Site Settings
+
+
+# Name of your site (displayed in the header)
+myname: Smriti Tiwari
+alias: seepls
+# Short bio or description (displayed in the header)
+byline: Forever a learner
+
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: https://avatars.githubusercontent.com/u/40840674?u=5ac11f83cc9ce24a4daa45eac748ba50e441f5f6\u0026v=4
+
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email:
+  facebook:
+  flickr:
+  github: seepls
+  instagram:
+  linkedin: smriti-tiwari-2016
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: 
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
+
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus: seepls
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics:
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url: "http://seepls.github.io"
+
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
+
+title: Smriti Tiwari
+email: smrititiwari2016@gmail.com
+description: >
+  Smriti's personal blog.
+
+github_username:  seepls
+linkedin_username:  Smriti Tiwari
+linkedin_id: smriti-tiwari-2016
+address: Indian Institue of Technology, Kharagpur, India
+# Build Settings
+sass:
+  sass_dir: _sass
+include: ['_pages']
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
