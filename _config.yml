@@ -59,6 +59,7 @@ address: Indian Institue of Technology, Kharagpur, India
 sass:
   sass_dir: _sass
 include: ['_pages']
+include: [".md"]
 kramdown:
   input: GFM
 plugins:
