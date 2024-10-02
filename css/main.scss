@@ -7,3 +7,10 @@
 	"syntax-highlighting",
 	"github-buttons"
 	/*,"icons"  Commented because not in use currently. Uncomment if required later.*/
+	
+body {
+  background-image: url('/img/Background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
