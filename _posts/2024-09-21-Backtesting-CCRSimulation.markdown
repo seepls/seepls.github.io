@@ -21,7 +21,9 @@ This blog contains 2 parts :
 **Part A :** Risk factor simulation backtesting  
 **Part B :** Portfolio exposure backtesting
 
-<h2 style="text-align: center;">**Parameters for Backtesting**</h2>
+
+<h4 style="text-align: center;"><strong>Parameters for Backtesting</strong></h4>
+
 
 
 a. **Testing Sample:**  
@@ -33,8 +35,8 @@ b. **Risk Horizons for Various Products:**
 - **Securities Financing Transactions (SFT) (Bonds, CMBS, RMBS/TBA):** Up to 3 months  
 - **Prime Brokerage Services:** 5 days
 
-{: .center}**PART A : Risk factor backtesting**
 
+<h4 style="text-align: center;"><strong>PART A : Risk factor backtesting</strong></h4>
 
 **Risk factor backtesting** is conducted to evaluate the simulation model. The objective is to demonstrate that the distributions of the simulated paths and the historically realized values are statistically same.
 
@@ -67,9 +69,7 @@ H₀: There is no statistical difference between the historical path of a risk d
 Finally, combine p-values from multiple simulation re-initializations to derive a single p-value representing the overall backtesting result using Stouffer's method of aggregation.
 
 
-
-
-{: .center}**PART B : Portfolio exposure backtesting**
+<h4 style="text-align: center;"><strong>PART B : Portfolio exposure backtesting</strong></h4>
 
 **Exposure backtesting** is performed to evaluate pricing models.
 
