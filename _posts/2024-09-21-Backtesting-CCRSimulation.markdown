@@ -21,7 +21,8 @@ This blog contains 2 parts :
 **Part A :** Risk factor simulation backtesting  
 **Part B :** Portfolio exposure backtesting
 
-{: .center}**Parameters for Backtesting**
+<h2 style="text-align: center;">**Parameters for Backtesting**</h2>
+
 
 a. **Testing Sample:**  
 - **In-sample test:** The sampling window is the same as, or within, the calibration window.  
