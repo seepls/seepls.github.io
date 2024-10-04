@@ -11,6 +11,3 @@ I have pursued my Bachelor's and Master's degrees in Mathematics and Computing f
 
 I am interested in applying Machine Learning and Deep Learning techniques in CCR and its extending its application in crypto and energy asset. 
 
---- 
-
-Feel free to let me know if you need further adjustments!
