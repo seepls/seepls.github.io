@@ -11,8 +11,7 @@ tags:
 - Pricing models
 ---
 Counterparty Credit Risk (CCR) refers to the risk that the counterparty in a financial transaction will default before the final settlement of the transaction's cash flows. Given its importance banks want to hedge and estimate CCR at all times. Institutions have built internal models to estimate future risk exposure. It includes simulation of underlying risk factors which impact the valuation of trades at future time. It is hence important to have backtesting framework set up for both simulation and pricing models to evaluate model performance and be able to rely on them for exposure computation. 
-{: .center}
-![Backtesting general framework 2](https://github.com/user-attachments/assets/f695d7fe-3ba6-443e-ad70-a004c120d68d)
+
 
 
 
