@@ -10,80 +10,88 @@ tags:
 - Simulation models
 - Pricing models
 ---
-Counterparty Credit Risk (CCR) refers to the risk that the counterparty in a financial transaction will default before the final settlement of the transaction's cash flows. Given its importance banks want to hedge and estimate CCR at all times. Institutions have built internal models to estimate future risk exposure. It includes simulation of underlying risk factors which impact the valuation of trades at future time. It is hence important to have backtesting framework set up for both simulation and pricing models to evaluate model performance and be able to rely on them for exposure computation. 
+**Counterparty Credit Risk** (CCR) refers to the risk that a counterparty in a financial transaction will default before the final settlement of the transaction's cash flows. Given its significance, banks aim to hedge and continuously estimate CCR. Institutions have developed **internal models** to estimate future risk exposure, which includes simulating underlying risk factors that impact the valuation of trades over time. Therefore, it is crucial to have a **backtesting framework** in place for both simulation and pricing models to evaluate their performance and ensure they can be relied upon for accurate exposure computation. 
+
+Following flow chart displays the flow for backtesting of exposure and risk factor and simulated data. 
 
 <img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Backtesting%20general%20framework.jpg" alt="Backtesting data flow" style="max-width:100%; height:auto;">
 
 
-
-
 This blog contains 2 parts :    
-Part A: Risk factor simulation backtesting  
-Part B: Portfolio exposure backtesting
+**Part A :** Risk factor simulation backtesting  
+**Part B :** Portfolio exposure backtesting
 
-For backtesting following choice of input can be taken :  
-a. Testing sample :   
-In-sample test : sampling window is same or inside the calibration window.   
-Out-of-sample test : Sampling window is outside calibration window.   
+{: .center}**Parameters for Backtesting**
 
-b. Risk horizons for various products:  
-OTC derivatives : up to 1 year  
-SFT(Bonds, CMBS, RMBS/TBA) : upto 3 months   
-Prime Brokerage service : 5 day    
+a. **Testing Sample:**  
+- **In-sample test:** The sampling window is the same as, or within, the calibration window.  
+- **Out-of-sample test:** The sampling window is outside the calibration window.  
 
-{: .center}
-PART A : Risk factor backtesting 
+b. **Risk Horizons for Various Products:**  
+- **OTC Derivatives:** Up to 1 year  
+- **Securities Financing Transactions (SFT) (Bonds, CMBS, RMBS/TBA):** Up to 3 months  
+- **Prime Brokerage Services:** 5 days
 
-Risk factor backtesting is performed for testing simulation model. The idea is to prove the distribution of simulated path and historical path are of the same kind.  
-
-For different asset class different risk factors are simulated :   
-IR - IR Rate, IR Vol   
-FX - FX Rate, FX Vol  
-Equity - Index, Single name  
-Commodity - Commodity Price, Commodity vol  
-Credit - issuer spread , generic curves  
-
-Null hypothesis is:   
-H0: No statistic difference between the 1 risk driver’s historical path and the N simulated paths.  
-
-Steps :
-1. Get the rank of the historical path among the 5000 simulated path i.e. s_i , 
-Rank : $s_i < his < s_i+1 $  
-2. Compute the u-value : $(i +(his - s_i / s_i+1 - s_i)) /N $  
-3. Sort the u-values and compute the distance using either AD/CM  
-4. compute distribution distance with U(0,1) : d     
-5. Get p-values from pre-calculated values for d   
-
-Combine p-values from multiple simulation re-initialisation to get a unique p-value representing the overall backtesting result by Stouffer aggregation. 
-
-{: .center}
-PART B : Portfolio exposure backtesting : for testing pricing models  
-
-Trade exposure backtesting is performed for testing pricing model.   
-Here the null hypothesis is,   
-H0 : Historically realised value should not show statistical difference than simulated exposure value. Predicted value should be >= realised.   
-
-Count sample size and breach size, and test It against Binomial distribution.   
-P-value = 1 - C(n,k,p)  
-
-Traffic light criteria:   
-P-value > 5% : green   
-P-value <0.01% : red   
-Rest is yellow   
-
-Breach count is done as follows, for collateralised trades we backtest the MPoR profile and for uncollateralised trades we test the shift profile:   
-a. For uncollateralized exposure : MtM > PFE profile   
-b. For collateralised : MtM increase in MPOR > collateralised PFE profile   
+{: .center}**PART A : Risk factor backtesting**
 
 
-It is important to note that the breaches can be aggregated on multiple portfolios but not on different risk horizons.   
+**Risk factor backtesting** is conducted to evaluate the simulation model. The objective is to demonstrate that the distributions of the simulated paths and the historically realized values are statistically same.
+
+Different asset classes require different risk factors to be simulated:  
+- **Interest Rate (IR):** IR Rate, IR Volatility  
+- **Foreign Exchange (FX):** FX Rate, FX Volatility  
+- **Equity:** Index, Single Name  
+- **Commodity:** Commodity Price, Commodity Volatility  
+- **Credit:** Issuer Spread, Generic Curves  
+
+**Null Hypothesis:**  
+H₀: There is no statistical difference between the historical path of a risk driver and the N simulated paths.
+
+<img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Simulated%20values.jpg" alt="Backtesting data flow" style="max-width:100%; height:auto;">
+
+**Steps:**
+1. Rank the historical path among the 5000 simulated paths, i.e., $\( s_i \$),  
+   Rank $i$ is where   $\( s_i < \text{his} < s_{i+1} \)$
+   
+2. Compute the u-value:      $\[
+   u = \frac{i + (\text{his} - s_i) / (s_{i+1} - s_i)}{N}
+   ]\$
+
+3. Sort the u-values and compute the distance using either the Anderson-Darling (AD) or Cramér-von Mises (CM) test.
+
+4. Calculate the distribution distance with $\( U(0,1) \)$, denoted as $\( d \)$.
+
+5. Obtain p-values from pre-calculated values for $\( d \)$.
+
+Finally, combine p-values from multiple simulation re-initializations to derive a single p-value representing the overall backtesting result using Stouffer's method of aggregation.
 
 
 
-Some important papers:   
 
-1. Sound modelling and B.T framework for forecasting IM - Daniel Aziz   
-2. Forecasting IM requirement : model evaluation - Paul Giltinan   
+{: .center}**PART B : Portfolio exposure backtesting**
+
+**Exposure backtesting** is performed to evaluate pricing models.
+
+The null hypothesis is:  
+H₀: The historically realized value should not show a statistical difference from the simulated exposure value. The predicted value should be greater than or equal to the realized value.
+
+Count the sample size and the number of breaches, and test it against a Binomial distribution.  
+P-value = $\( 1 - C(n,k,p) \)$
+
+**Traffic Light Criteria:**  
+- P-value > 5%: Green  
+- P-value < 0.01%: Red  
+- Everything in between: Yellow  
+
+Breaches are counted as follows: for collateralized trades, we backtest the MPoR (Margin Period of Risk) profile, and for uncollateralized trades, we test the shift profile:  
+a. **For uncollateralized exposure:** MtM > PFE profile  
+b. **For collateralized exposure:** MtM increase during MPoR > collateralized PFE profile  
+
+It is important to note that breaches can be aggregated across multiple portfolios, but not across different risk horizons.
+
+{: .center}**Some important papers**  
+
+1. [Sound modelling and B.T framework for forecasting IM - Daniel Aziz] (https://www.risk.net/media/download/949696/download)
 
 
 
