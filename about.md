@@ -9,5 +9,5 @@ I am currently a Quantitative Finance professional, primarily working in Counter
 
 I have pursued my Bachelor's and Master's degrees in Mathematics and Computing from the Indian Institute of Technology (IIT), Kharagpur, India.
 
-I am interested in applying Machine Learning and Deep Learning techniques in CCR and its extending its application in crypto and energy asset. 
+I am interested in applying Machine Learning and Deep Learning techniques in CCR and extending its application in crypto and energy asset. 
 
