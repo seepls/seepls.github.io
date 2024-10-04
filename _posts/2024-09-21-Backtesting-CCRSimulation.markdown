@@ -77,7 +77,7 @@ The null hypothesis is:
 H₀: The historically realized value should not show a statistical difference from the simulated exposure value. The predicted value should be greater than or equal to the realized value.
 
 Count the sample size and the number of breaches, and test it against a Binomial distribution.  
-P-value = $\( 1 - C(n,k,p) \)$
+P-value =  1 - C(n,k,p) 
 
 **Traffic Light Criteria:**  
 - P-value > 5%: Green  
@@ -90,7 +90,7 @@ b. **For collateralized exposure:** MtM increase during MPoR > collateralized PF
 
 It is important to note that breaches can be aggregated across multiple portfolios, but not across different risk horizons.
 
-{: .center}**Some important papers**  
+<h4 style="text-align: center;"><strong>Some important papers</strong></h4>
 
 1. [Sound modelling and B.T framework for forecasting IM - Daniel Aziz] (https://www.risk.net/media/download/949696/download)
 
@@ -117,14 +117,3 @@ It is important to note that breaches can be aggregated across multiple portfoli
 
 
 
-
-
-<!--- Our experiments and approaches are detailed here- [Report]({{ site.baseurl }}/docs/pommerman_report.pdf)
-{: .center}
-![Pommerman]({{ site.baseurl }}/img/pommerman.gif "Pommerman"){:style="max-height: 500px;"}
-
-To see our agent in action, watch the video below-
-
-<iframe width="100%" height="400px" src="https://www.youtube.com/embed/DtiyIrMZ69A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
---->
