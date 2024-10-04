@@ -12,6 +12,8 @@ tags:
 ---
 Counterparty Credit Risk (CCR) refers to the risk that the counterparty in a financial transaction will default before the final settlement of the transaction's cash flows. Given its importance banks want to hedge and estimate CCR at all times. Institutions have built internal models to estimate future risk exposure. It includes simulation of underlying risk factors which impact the valuation of trades at future time. It is hence important to have backtesting framework set up for both simulation and pricing models to evaluate model performance and be able to rely on them for exposure computation. 
 
+<img src="https://github.com/seepls/seepls.github.io/blob/main/img/Backtesting%20general%20framework.jpg" alt="Backtesting data flow" style="max-width:100%; height:auto;">
+
 
 
 
