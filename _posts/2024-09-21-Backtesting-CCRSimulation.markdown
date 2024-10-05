@@ -53,18 +53,19 @@ H₀: There is no statistical difference between the historical path of a risk d
 <img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Simulated%20values.jpg" alt="Backtesting data flow" style="max-width:100%; height:auto;">
 
 **Steps:**
-1. Rank the historical path among the 5000 simulated paths, i.e., $  s_i $,  
-   Rank $i$ is where   $ s_i < \text{his} < s_{i+1} $
+1. Rank the historical path among the 5000 simulated paths, i.e., $s_i$,  
+   Rank $i$ is where   $s_i < \text{his} < s_{i+1}$
    
-2. Compute the u-value:      $\[
-   u = \frac{i + (\text{his} - s_i) / (s_{i+1} - s_i)}{N}
-   ]\$
+2. Compute the u-value:
+   $$ 
+   u = \frac{i + (\text{his} - s_i)}{s_{i+1} - s_i} / N
+   $$
 
 3. Sort the u-values and compute the distance using either the Anderson-Darling (AD) or Cramér-von Mises (CM) test.
 
-4. Calculate the distribution distance with $\( U(0,1) \)$, denoted as $\( d \)$.
+4. Calculate the distribution distance with $U(0,1)$, denoted as $d$.
 
-5. Obtain p-values from pre-calculated values for $\( d \)$.
+5. Obtain p-values from pre-calculated values for $d$.
 
 Finally, combine p-values from multiple simulation re-initializations to derive a single p-value representing the overall backtesting result using Stouffer's method of aggregation.
 
