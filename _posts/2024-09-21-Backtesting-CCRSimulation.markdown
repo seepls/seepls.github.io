@@ -53,8 +53,8 @@ H₀: There is no statistical difference between the historical path of a risk d
 <img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Simulated%20values.jpg" alt="Backtesting data flow" style="max-width:100%; height:auto;">
 
 **Steps:**
-1. Rank the historical path among the 5000 simulated paths, i.e., $\( s_i \$),  
-   Rank $i$ is where   $\( s_i < \text{his} < s_{i+1} \)$
+1. Rank the historical path among the 5000 simulated paths, i.e., $  s_i $,  
+   Rank $i$ is where   $ s_i < \text{his} < s_{i+1} $
    
 2. Compute the u-value:      $\[
    u = \frac{i + (\text{his} - s_i) / (s_{i+1} - s_i)}{N}
