@@ -57,9 +57,7 @@ H₀: There is no statistical difference between the historical path of a risk d
    Rank $i$ is where   $s_i < \text{his} < s_{i+1}$
    
 2. Compute the u-value:
-   $$ 
-   u = \frac{i + (\text{his} - s_i)}{s_{i+1} - s_i} / N
-   $$
+   $u = (\frac{i + (\text{his} - s_i)}{s_{i+1} - s_i} )/ N$
 
 3. Sort the u-values and compute the distance using either the Anderson-Darling (AD) or Cramér-von Mises (CM) test.
 
