@@ -12,7 +12,7 @@ tags:
 ---
 **Counterparty Credit Risk** (CCR) refers to the risk that a counterparty in a financial transaction will default before the final settlement of the transaction's cash flows. Given its significance, banks aim to hedge and continuously estimate CCR. Institutions have developed **internal models** to estimate future risk exposure, which includes simulating underlying risk factors that impact the valuation of trades over time. Therefore, it is crucial to have a **backtesting framework** in place for both simulation and pricing models to evaluate their performance and ensure they can be relied upon for accurate exposure computation. 
 
-Following flow chart displays the flow for backtesting of exposure and risk factor and simulated data. 
+Following flow chart displays the flow for backtesting of exposure and risk factor simulated data. 
 
 <img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Backtesting%20general%20framework.jpg" alt="Backtesting data flow" style="max-width:100%; height:auto;">
 
@@ -65,7 +65,7 @@ H₀: There is no statistical difference between the historical path of a risk d
 
 5. Obtain p-values from pre-calculated values for $d$.
 
-Finally, combine p-values from multiple simulation re-initializations to derive a single p-value representing the overall backtesting result using Stouffer's method of aggregation.
+Finally, combine p-values from multiple simulation re-initializations to derive a single p-value representing the overall backtesting result using [Stouffer's](https://arxiv.org/pdf/1707.06897) method of aggregation.
 
 
 <h4 style="text-align: center;"><strong>PART B : Portfolio exposure backtesting</strong></h4>
@@ -76,12 +76,7 @@ The null hypothesis is:
 H₀: The historically realized value should not show a statistical difference from the simulated exposure value. The predicted value should be greater than or equal to the realized value.
 
 Count the sample size and the number of breaches, and test it against a Binomial distribution.  
-P-value =  1 - C(n,k,p) 
-
-**Traffic Light Criteria:**  
-- P-value > 5%: Green  
-- P-value < 0.01%: Red  
-- Everything in between: Yellow  
+P-value =  1 - C(n,k,p)  
 
 Breaches are counted as follows: for collateralized trades, we backtest the MPoR (Margin Period of Risk) profile, and for uncollateralized trades, we test the shift profile:  
 a. **For uncollateralized exposure:** MtM > PFE profile  
@@ -89,9 +84,19 @@ b. **For collateralized exposure:** MtM increase during MPoR > collateralized PF
 
 It is important to note that breaches can be aggregated across multiple portfolios, but not across different risk horizons.
 
+<h4 style="text-align: center;"><strong>Model performance evaluation</strong></h4>
+
+The final model performance is evaluated using a [traffic light system](https://naomi.com/the-traffic-light-approach-to-problem-solving-7b3d6e42acc2) based on the p-value. Green indicates healthy performance, yellow suggests the model needs attention, and red means the model is not suitable for use.
+
+**Traffic Light Criteria:**  
+- P-value > 5%: Green  
+- P-value < 0.01%: Red  
+- Everything in between: Yellow 
+
 <h4 style="text-align: center;"><strong>Some important papers</strong></h4>
 
-1. [Sound modelling and B.T framework for forecasting IM - Daniel Aziz] (https://www.risk.net/media/download/949696/download)
+1. [Sound modelling and B.T framework for forecasting IM - Daniel Aziz](https://www.risk.net/media/download/949696/download)
+2. [Choosing Between Methods of Combining p-values- Nicholas A. Heard](https://arxiv.org/pdf/1707.06897)
 
 
 
