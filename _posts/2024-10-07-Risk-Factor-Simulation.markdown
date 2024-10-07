@@ -63,8 +63,10 @@ d. **Equity Simulation**: GBM with local volatility. Shifted log-normal model is
 
 
 
-<h4 style="text-align: center;"><strong>Some important papers</strong></h4>
+<h4 style="text-align: center;"><strong>Some important papers</strong></h4>  
 
+1. [Glasserman, P., Heidelberger, P., & Shahabuddin, P. (2004). Variance Reduction Techniques for Simulating Value-at-Risk](https://pubsonline.informs.org/doi/abs/10.1287/mnsc.46.10.1349.12274)  
+2. [A Guide to Modeling Counterparty Credit Risk - Steven H Zhu](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1032522)
 
 
 
