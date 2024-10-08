@@ -13,8 +13,6 @@ tags:
 The primary goal of **Potential Future Exposure** (PFE) Simulation is to generate future scenarios for correlated risk factors (RF). These scenarios are fed into pricers to estimate future trade-level PFE exposure across 75 pricing horizons. The results are then passed on to aggregation, where the full PFE distribution is computed at 38 time horizons at the counterparty (C/P) level. This process also accounts for netting and collateral. 
 Following flow chart displays the flow for backtesting of exposure and risk factor simulated data. 
 
-<!--img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Backtesting%20general%20framework.jpg" alt="Backtesting data flow" style="max-width:100%; height:auto;"-->
-
 
 <h4 style="text-align: center;"><strong>Key steps</strong></h4>
 
@@ -61,7 +59,7 @@ c. **Commodity RF simulation**: RFs are categorised as primary and secondary. Th
 
 d. **Equity Simulation**: GBM with local volatility. Shifted log-normal model is the simplest model to incorporate skew into equity simulation.
 
-
+<img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Rf%20flow.jpg" alt="Risk Factor data flow" style="max-width:100%; height:auto;">
 
 <h4 style="text-align: center;"><strong>Some important papers</strong></h4>  
 
