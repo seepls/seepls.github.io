@@ -61,6 +61,9 @@ d. **Equity Simulation**: GBM with local volatility. Shifted log-normal model is
 
 <img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Rf%20flow.jpg" alt="Risk Factor data flow" style="max-width:100%; height:auto;">
 
+<img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Simulation%20rf%20flow.jpg" alt="Simulation Risk Factor data flow" style="max-width:100%; height:auto;">
+
+
 <h4 style="text-align: center;"><strong>Some important papers</strong></h4>  
 
 1. [Glasserman, P., Heidelberger, P., & Shahabuddin, P. (2004). Variance Reduction Techniques for Simulating Value-at-Risk](https://pubsonline.informs.org/doi/abs/10.1287/mnsc.46.10.1349.12274)  
