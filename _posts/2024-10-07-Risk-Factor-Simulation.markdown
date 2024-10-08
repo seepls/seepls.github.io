@@ -45,10 +45,10 @@ a. **Interest Rate (IR) Simulation**:
        Closed form solutions of discount factors, cap, floor and swaption pricing. 
 
 - Advanced Model : SABR model which is complex but can calibrate to the entire volatility surface, including skew.
-- Other options:
-    G1PP  
-    G2PP  
-    Quadratic Gaussian Model.   
+- Other options:  
+    Gaussian one factor model : [G1++](https://onlinelibrary.wiley.com/doi/10.5402/2012/673607)     
+    Gaussian two factor model: [G2++](https://onlinelibrary.wiley.com/doi/10.5402/2012/673607)       
+    [Quadratic Gaussian Model](https://www.oreilly.com/library/view/encyclopedia-of-quantitative/9780470057568/ChapterQ.html)    
 
 b. **FX Simulation**:   
    Geometric brownian motion(GBM)  
