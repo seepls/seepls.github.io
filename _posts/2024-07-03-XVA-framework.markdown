@@ -1,3 +1,17 @@
+---
+layout: post
+title: "XVA framework"
+date: 2024-07-03
+comments: true
+tags:
+- Counterparty credit risk
+- Monte Carlo Simulation
+- Valuation Framework
+- Data flow
+- Simulation models
+- Pricers
+---
+
 The cross-asset XVA framework consists of four primary modules plus one random number generation. The key modules are: 
 
 - Market generation/simulation
