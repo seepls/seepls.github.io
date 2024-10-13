@@ -13,9 +13,7 @@ tags:
 ---
 
 Margin serves as a risk mitigation tool and is calculated using several different techniques, depending on the regulatory framework and nature of the derivatives being traded.
-<h4 style="text-align: center;"><strong>Key steps</strong></h4>
-
-1. **ISDA SIMM(Standard Initial Margin model):**
+<h4 style="text-align: center;"><strong>ISDA SIMM(Standard Initial Margin model)</strong></h4>
 
 The ISDA SIMM calculates the potential future exposure (PFE) over a 10-day Margin Period of Risk (MPoR) at a 99% confidence level. This is achieved through a series of nested variance/covariance formulas, which are applied to aggregate results at different granular levels to derive the Initial Margin (IM).   
 
@@ -60,18 +58,17 @@ ii) Transparent haircut calculation.
 iii) Separation of asset classes  
 iv) SIMM parameters are calibrated using 3Y look-back period plus 1 stress year.   
 
+<h4 style="text-align: center;"><strong>PFE Dynamic Initial Margin Model</strong></h4>
 
-**2. PFE Dynamic IM:**
-Dynamic Initial Margin under uncleared margin rules relies on real-time valuation of derivative positions and is more computationally intensive than static models.
+Dynamic Initial Margin under uncleared margin rules relies on real-time valuation of derivative positions and is more computationally intensive than static models.  
 
-Dynamic IM Algorithm:  
-
-Identify key Risk Factors e.g . Credit spread, Market vol, IR.
-Assess correlation among risk factors 
-Collect real time market data for valuation 
-Perform PFE simulations 
-Calculate the Dynamic IM based on SIMM computations
-Calibration the Dynamic IM model 
+Dynamic IM Algorithm:    
+- Identify key Risk Factors e.g . Credit spread, Market vol, IR.  
+- Assess correlation among risk factors   
+- Collect real time market data for valuation   
+- Perform PFE simulations   
+- Calculate the Dynamic IM based on SIMM computations 
+- Calibration the Dynamic IM model   
 
 DIM model I/P:
 a. Initial Margin from the SIMM model
