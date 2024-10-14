@@ -89,7 +89,9 @@ X = netting set value change in portfolio from $t$ to $t+dt$, on path $k$.
 
 **Schedule-based IM:**  
 At t = 0 Actual IM held.   
-Future value is % of notional based on time to maturity.     
+Future value is % of notional based on time to maturity.  
+
+
 |Time to maturity     | IM requirement as % of Notional | 
 |---------------------|---------------------------------|
 | 0-2                 | 2%                              | 
