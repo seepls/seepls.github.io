@@ -44,7 +44,7 @@ The ISDA SIMM calculates the potential future exposure (PFE) over a 10-day Margi
 3. Risk factors are weighted based on their potential impact (MPoR weights)   
 4. Aggregation is based on predefined buckets.   
 5. SIMM satisfies BCBS(Basel committee of banking and supervision) guidelines  
-6. SIMM parameters are calibrated using a 3Y look back + 1 Y stress data  
+6. SIMM parameters are calibrated using a 3-year look back + 1-year stress data  
 
 - **Trade Data:**
   - Stored in XML format and loaded in ORE(Open source risk engine) to compute NPV and sensitivities. 
@@ -56,7 +56,7 @@ The ISDA SIMM calculates the potential future exposure (PFE) over a 10-day Margi
 i) flexibility with collateral eligibility, but requires haircuts and does not allow for Wrong way risk(WWR).    
 ii) Transparent haircut calculation.   
 iii) Separation of asset classes  
-iv) SIMM parameters are calibrated using 3Y look-back period plus 1 stress year.   
+iv) SIMM parameters are calibrated using 3-year look-back period plus 1 stress year.   
 
 <h4 style="text-align: center;"><strong>PFE Dynamic Initial Margin Model</strong></h4>
 
@@ -82,8 +82,8 @@ c. Simulated FX rates for non-USD cashflow/collateral conversions.
 **Scaled IM:**
 Non-path specific. IM is scaled with time and risk profile.   
 DIM(t) = min($DIM * min(R(t)/R(0) , 1)$  
-R(t)= $(Avg.(X**2(t,k))**0.5$  
-X = netting set value change in portfolio from t to t+dt, on path k.   
+R(t)= $\sqrt{(Avg.(X^2(t,k))}$  
+X = netting set value change in portfolio from $t$ to $t+dt$, on path $k$.   
 
 
 
@@ -91,10 +91,10 @@ X = netting set value change in portfolio from t to t+dt, on path k.
 At t = 0 Actual IM held.   
 Future value is % of notional based on time to maturity.     
 |Time to maturity     | IM requirement as % of Notional | 
-|-----------|-----|
-| 0-2     | 2%  | 
-| 2-5       | 5%  | 
-| 5 >   | 10%  | 
+|---------------------|---------------------------------|
+| 0-2                 | 2%                              | 
+| 2-5                 | 5%                              | 
+| 5 >                 | 10%                             | 
 
 
 <h4 style="text-align: center;"><strong>Rule based margin (Schedule based) </strong></h4>
