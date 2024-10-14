@@ -62,45 +62,48 @@ iv) SIMM parameters are calibrated using 3Y look-back period plus 1 stress year.
 
 Dynamic Initial Margin under uncleared margin rules relies on real-time valuation of derivative positions and is more computationally intensive than static models.  
 
-Dynamic IM Algorithm:    
+**Dynamic IM Algorithm:**     
 - Identify key Risk Factors e.g . Credit spread, Market vol, IR.  
 - Assess correlation among risk factors   
 - Collect real time market data for valuation   
 - Perform PFE simulations   
 - Calculate the Dynamic IM based on SIMM computations 
-- Calibration the Dynamic IM model   
+- Calibration the Dynamic IM model     
 
-DIM model I/P:
-a. Initial Margin from the SIMM model
-b. Valuation matrices for both the base and shift scenarios
-c. Simulated FX rates for non-USD cashflow/collateral conversions. 
+**DIM model I/P:**  
+a. Initial Margin from the SIMM model  
+b. Valuation matrices for both the base and shift scenarios  
+c. Simulated FX rates for non-USD cashflow/collateral conversions.   
+  
+**Upstream model:** Uses PFE simulation data, including FX and ISDA SIMM results.  
+**Downstream model:** Aggregates PFE results and applies them to the Initial Margin calculations.   
+**Collateral Buckets:** Typically includes 1 CSA, 1 MC(model class), and 1 PC (Product class)  
 
-Upstream model: Uses PFE simulation data, including FX and ISDA SIMM results.
-Downstream model: Aggregates PFE results and applies them to the Initial Margin calculations. 
-Collateral Buckets: Typically includes 1 CSA, 1 MC(model class), and 1 PC (Product class)
-
- Scaled IM: 
-Non-path specific. IM is scaled with time and risk profile. 
-DIM(t) = min(DIM * min(R(t)/R(0) , 1) 
-R(t)= sqrt(Avg.(X**2(t,k))
-X = netting set value change in portfolio from t to t+dt, on path k. 
+**Scaled IM:**
+Non-path specific. IM is scaled with time and risk profile.   
+DIM(t) = min($DIM * min(R(t)/R(0) , 1)$  
+R(t)= $(Avg.(X**2(t,k))**0.5$  
+X = netting set value change in portfolio from t to t+dt, on path k.   
 
 
 
- Schedule-based IM:
-At t = 0 Actual IM held. 
-Future value is % of notional based on time to maturity. 
+**Schedule-based IM:**  
+At t = 0 Actual IM held.   
+Future value is % of notional based on time to maturity.     
 |Time to maturity     | IM requirement as % of Notional | 
 |-----------|-----|
 | 0-2     | 2%  | 
 | 2-5       | 5%  | 
 | 5 >   | 10%  | 
 
-3. Rule based margin (Schedule based) 
-This is a simpler, rule-based approach where margin requirements are scheduled as a percentage of notional value, depending on time to maturity. It is less risk-sensitive but easier to implement than more sophisticated models like SIMM. 
 
-4. IMM(internal model method): 
-The Internal model method is used to calculate capital requirements according to Basel III. This method allows banks to use internal models to determine risk and margin. But it requires regulatory approval, which involves a rigorous assessment of the model’s accuracy, robustness and compliance with standards.
+<h4 style="text-align: center;"><strong>Rule based margin (Schedule based) </strong></h4>
+
+This is a simpler, rule-based approach where margin requirements are scheduled as a percentage of notional value, depending on time to maturity. It is less risk-sensitive but easier to implement than more sophisticated models like SIMM.   
+
+<h4 style="text-align: center;"><strong>IMM(internal model method) </strong></h4>
+
+The Internal model method is used to calculate capital requirements according to Basel III. This method allows banks to use internal models to determine risk and margin. But it requires regulatory approval, which involves a rigorous assessment of the model’s accuracy, robustness and compliance with standards.  
 
 <img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/IM%20Flow.jpg" alt="Simulation Risk Factor data flow" style="max-width:100%; height:auto;">
 
