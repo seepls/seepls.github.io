@@ -5,9 +5,14 @@ header: True
 permalink: /about/
 ---
 
-I am currently a Quantitative Finance professional, primarily working in Counterparty Credit Risk (CCR) and XVA (Valuation Adjustments). I have experience working with globally systemically important banks, namely Goldman Sachs and Wells Fargo.
+Hello! I am a Quantitative Finance professional based in London, specializing in Counterparty Credit Risk (CCR) and XVA (Valuation Adjustments). I have experience working with globally systemically important financial institutions.
 
-I have pursued my Bachelor's and Master's degrees in Mathematics and Computing from the Indian Institute of Technology (IIT), Kharagpur, India.
+I hold both Bachelor's and Master's degrees in Mathematics and Computing from the Indian Institute of Technology (IIT), Kharagpur, India.
 
-I am interested in applying Machine Learning and Deep Learning techniques in CCR and extending its application in crypto and energy asset. 
+My interests include:
+- Applying Machine Learning and Deep Learning techniques in CCR
+- Extending these applications to crypto and energy assets
 
+I am passionate about leveraging quantitative methods to solve real-world financial problems. I am currently open to new opportunities—particularly interested in joining innovative startups or organizations like Bloomberg.
+
+Feel free to connect if you’d like to collaborate or discuss opportunities!
