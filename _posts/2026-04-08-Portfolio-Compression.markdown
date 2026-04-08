@@ -10,10 +10,10 @@ tags:
 - CDS 
 ---
 
-Portfolio compression is a risk reduction (multilateral netting) excercise where one tends to preserve the market risk position of each counterparty but reduce the settlement and counterparty risk by trade elimination / Notional reduction.
+Portfolio compression is a risk reduction (**multilateral netting**) excercise where one tends to preserve the market risk position of each counterparty but reduce the settlement and counterparty risk by trade elimination / Notional reduction.
 It cancels offsetting trades while keeping each party’s net exposure unchanged. Banks “tear up” redundant contracts so they carry the same credit risk at much lower gross notional. 
 
-Compression cycle in banks typically happens quarterly.
+**Compression cycle (Banks do it quarterly)**
 1. All relevant transactions. Post-2014 standardization helps – single-name CDS use fixed coupons (100 or 500 bps) and common IMM quarter dates (20 Mar/Jun/Sep/Dec) 4, so trades are grouped accordingly.
 2. Match transaction details to each bilatral counterparty.
 3. Run the trioptima's trireduce algorithm.
@@ -26,9 +26,9 @@ Reduce the gross notional wihtout changing the net possition of any counterparty
 -  For each loop, subtract the minimum notional on that loop from every trade in it.
 - In practice, TriOptima’s patented method uses a **depth-first-search to enumerate all cycles** and then **greedily “compress”** each one by the smallest edge.
 - repeat till no closed ring left. 
+<img src="https://raw.githubusercontent.com/seepls/seepls.github.io/main/img/Compression.jpg" alt="Compression" style="max-width:100%; height:auto;">
 
-
-**coupon blending**: 
+**Coupon Blending for non-standard CDS trades**: 
 By its nature compression requires standard contracts--> fungible --> cashflows are easily netted. 
 
 CDS contracts now trade with a fixed premium and upfront payment with fiex termination date of 20th of Quarter end month. 
